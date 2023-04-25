@@ -1,0 +1,39 @@
+/* kumbh-sans-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Kumbh Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/kumbh-sans-v20-latin-regular.woff2') format('woff2'),
+        url('../fonts/kumbh-sans-v20-latin-regular.woff') format('woff');
+}
+
+/* kumbh-sans-700 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Kumbh Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/kumbh-sans-v20-latin-700.woff2') format('woff2'),
+        url('../fonts/kumbh-sans-v20-latin-700.woff') format('woff');
+}
+
+/* kumbh-sans-800 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Kumbh Sans';
+    font-style: normal;
+    font-weight: 800;
+    src: url('../fonts/kumbh-sans-v20-latin-800.woff2') format('woff2'),
+        url('../fonts/kumbh-sans-v20-latin-800.woff') format('woff');
+}
+
+/* kumbh-sans-900 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Kumbh Sans';
+    font-style: normal;
+    font-weight: 900;
+    src: url('../fonts/kumbh-sans-v20-latin-900.woff2') format('woff2'),
+        url('../fonts/kumbh-sans-v20-latin-900.woff') format('woff');
+}

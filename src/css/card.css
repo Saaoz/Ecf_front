@@ -1,0 +1,47 @@
+.features{
+    display: flex;
+    flex-wrap: wrap;
+    padding-inline: 16.5rem;
+    gap: 5rem;
+    padding-top: 8rem;
+    justify-content: center;
+}
+
+.job_list{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 0.6rem;
+    gap: 1.2rem;
+    width: 35rem;
+    height: 22.8rem;
+    padding-inline: 3.2rem;
+    padding-bottom: 3.2rem;
+    padding-top: 4.9rem;
+}
+
+.link{
+    padding-top: 1.8rem;
+    text-decoration: none;
+}
+
+.logo{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 1.5rem;
+    background-color: burlywood;
+    position: absolute;
+    top: -10%; /* Déplacez la moitié supérieure de l'image au-dessus de la carte */
+    left: 3.2rem;
+}
+
+.time_part{
+    display: flex;
+}
+
+.contract::before{
+    content: '\00b7'; /* Le point */
+  margin-right: 1rem; /* Espace de 12px à droite */
+  margin-left: 1rem; /* Espace de 12px à gauche */
+}

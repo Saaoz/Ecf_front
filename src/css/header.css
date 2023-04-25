@@ -1,0 +1,15 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 16.5rem;
+    height: 16rem;
+    border-radius: 0rem 0rem 0rem 10rem;
+    background-image:url("../assets/img/Triangle.svg") ;
+    background-size: cover; /* ou background-size: 100% auto; */
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    color: #fff;
+
+}
