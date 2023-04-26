@@ -4,29 +4,29 @@ import '../css/home.css'
 
 import SearchBar from '../components/commun/SearchBar';
 import Card from '../components/home/Card';
-
-
+import axios from 'axios';
 
 function Home() {
     const [results, setResults] = useState([]);
 
-    const handleSearch = (keyword, location, isFullTime) => {
-      // Effectuer une recherche avec les paramètres passés
-      // Mettre les résultats dans l'état du composant
-      setResults(results);
-    }
-    
+    const handleSearch = async (keyword, location, isFullTime) => {
+        try {
+            const response = await axios.get(`/api/offers?position=${keyword}&location=${location}&isFullTime=${isFullTime}`);
+            setResults(response.data);
+        } catch (error) {
+            console.error(error);
+        }
+    };
 
     return (
         <>
-            <Header/>
-
+            <Header />
             <div className='searched'>
-                <SearchBar search={handleSearch}/>
+                <SearchBar search={handleSearch} />
             </div>
 
             <section>
-                <Card/>
+                <Card cards={results} />
             </section>
         </>
     );
