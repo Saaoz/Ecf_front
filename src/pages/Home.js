@@ -11,7 +11,7 @@ function Home() {
 
     const handleSearch = async (keyword, location, isFullTime) => {
         try {
-            const response = await axios.get(`/api/offers?position=${keyword}&location=${location}&isFullTime=${isFullTime}`);
+            const response = await axios.get(`/api/search?position=${keyword}&location=${location}&isFullTime=${isFullTime}`);
             setResults(response.data);
         } catch (error) {
             console.error(error);

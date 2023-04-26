@@ -24,6 +24,7 @@
 .link{
     padding-top: 1.8rem;
     text-decoration: none;
+    color: #5964E0;
 }
 
 .logo{
@@ -45,3 +46,12 @@
   margin-right: 1rem; /* Espace de 12px à droite */
   margin-left: 1rem; /* Espace de 12px à gauche */
 }
+
+.job-list_link{
+    text-decoration: none;
+    color: black;
+}
+.time_part, p{
+    color: #6E8098;
+}
+

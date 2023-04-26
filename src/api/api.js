@@ -12,18 +12,19 @@ export const fetchData = async () => {
     return data;
   };
 
-  export const searchJobOffers = async (keyword, location, isFullTime) => {
+  export const searchJobOffers = async (keyword, location, contract, company) => {
     try {
-      const response = await axios.get('/api/offers', {
-        params: {
-          position: keyword,
-          location: location,
-          isFullTime: isFullTime ? true : undefined
-        }
-      });
-      return response.data;
-    } catch (error) {
-      console.error(error);
-      return [];
+    const response = await axios.get('/api/offers/search', {
+    params: {
+    keyword: keyword,
+    location: location,
+    contract: contract ? 'full-time' : undefined,
+    company: company
     }
-  };
+    });
+    return response.data;
+    } catch (error) {
+    console.error(error);
+    return [];
+    }
+    };

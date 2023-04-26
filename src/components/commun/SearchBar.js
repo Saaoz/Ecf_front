@@ -3,17 +3,12 @@ import { searchJobOffers } from '../../api/api';
 import '../../css/Search.css';
 
 function SearchBar(props) {
-	const [company, setCompany] = useState('');
-	const [keyword, setKeyword] = useState('');
+	const [positionOrCompany, setPositionOrCompany] = useState('');
 	const [location, setLocation] = useState('');
 	const [isFullTime, setIsFullTime] = useState(false);
 
-	const handleCompanyChange = (event) => {
-		setCompany(event.target.value);
-	};
-
-	const handleKeywordChange = (event) => {
-		setKeyword(event.target.value);
+	const handlePositionOrCompanyChange = (event) => {
+		setPositionOrCompany(event.target.value);
 	};
 
 	const handleLocationChange = (event) => {
@@ -25,14 +20,14 @@ function SearchBar(props) {
 	};
 
 	const handleSearch = async () => {
-		const cards = await searchJobOffers(keyword, location, isFullTime, company);
+		const cards = await searchJobOffers(positionOrCompany, location, isFullTime);
 		props.search(cards);
 	};
 
 	return (
 		<div className='search-bar'>
-			<input type='text' placeholder='Filter by title, companies, expertise…' value={keyword, company} onChange={handleKeywordChange} />
-			<input type='text' placeholder='Country' value={location} onChange={handleLocationChange} />
+			<input type='text' placeholder='Filter by title or company...' value={positionOrCompany} onChange={handlePositionOrCompanyChange} />
+			<input type='text' placeholder='Location' value={location} onChange={handleLocationChange} />
 			<label>
 				<input type='checkbox' checked={isFullTime} onChange={handleFullTimeChange} />
 				Full Time Only
@@ -43,3 +38,5 @@ function SearchBar(props) {
 }
 
 export default SearchBar;
+
+

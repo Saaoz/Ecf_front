@@ -19,7 +19,8 @@ const getCards = async () => {
 	return (
 		<div className='features'>
 			{cards.map((card, index) => (
-				<Link to={`/single-job/${card._id}`} key={index} className='job_list'>
+				<div className='job_list'>
+					<Link to={`/single-job/${card._id}`} key={index} className='job-list_link'>
 					<img className='logo' src={logo} alt='Company Logo' />
 					<div className='time_part'>
 						<p>{moment(card.postedAt).fromNow()}</p>
@@ -27,10 +28,11 @@ const getCards = async () => {
 					</div>
 					<h2>{card.position}</h2>
 					<p>{card.company}</p>
+					</Link>
 					<a className='link' href={card.website}>
 						Website
 					</a>
-				</Link>
+				</div>
 			))}
 		</div>
 	);
