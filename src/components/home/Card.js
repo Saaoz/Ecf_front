@@ -24,12 +24,13 @@ const getCards = async () => {
 					<img className='logo' src={logo} alt='Company Logo' />
 					<div className='time_part'>
 						<p>{moment(card.postedAt).fromNow()}</p>
+						<span className='Point_space'></span>
 						<p className='contract'>{card.contract}</p>
 					</div>
 					<h2>{card.position}</h2>
 					<p>{card.company}</p>
 					</Link>
-					<a className='link' href={card.website}>
+					<a className='web' href={card.website}>
 						Website
 					</a>
 				</div>

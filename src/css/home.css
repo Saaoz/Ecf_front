@@ -8,3 +8,46 @@
 body{
     background-color: #F4F6F8;
 }
+
+.Point_space{
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 100%;
+    background-color: var(--color-dark-grey);
+}
+
+.Single_footer{
+    width: 100%;
+    background-color: var(--color-white);
+    padding: 0 10%;
+
+}
+
+.Single_footer_son{
+    box-sizing: content-box;
+    width: min(80rem,100%);
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 0;
+    margin: 8rem auto 0;
+}
+
+.Single_btn{
+    font-size: 1.6rem;
+    font-weight: 700;
+    border-radius: 0.5rem;
+    padding: 1.6rem;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+.Single_apply{
+    color: var(--color-white);
+    background-color: var(--color-violet);
+}
+
+.Single_link{
+    color: var(--color-violet);
+    background-color: var(--color-white);
+    text-decoration: none;
+}

@@ -1,10 +1,12 @@
 .features{
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 3rem;
+    gap: 3rem;
+    padding: 8rem 0 0;
+    width: 100%;
+    justify-items: center;
     padding-inline: 16.5rem;
-    gap: 5rem;
-    padding-top: 8rem;
-    justify-content: center;
 }
 
 .job_list{
@@ -21,7 +23,7 @@
     padding-top: 4.9rem;
 }
 
-.link{
+.web{
     padding-top: 1.8rem;
     text-decoration: none;
     color: #5964E0;
@@ -39,14 +41,10 @@
 
 .time_part{
     display: flex;
+    align-items: baseline;
+    grid-gap: 1.2rem;
+    gap: 1.2rem;
 }
-
-.contract::before{
-    content: '\00b7'; /* Le point */
-  margin-right: 1rem; /* Espace de 12px à droite */
-  margin-left: 1rem; /* Espace de 12px à gauche */
-}
-
 .job-list_link{
     text-decoration: none;
     color: black;

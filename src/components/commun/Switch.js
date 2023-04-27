@@ -1,18 +1,25 @@
-import React, { useState } from 'react';
+import sunIconSrc from '../../assets/img/sun.svg';
+import moonIconSrc from '../../assets/img/moon.svg';
+
 import '../../css/Switch.css';
 
-const Switchbtn = () => {
-  const [isOn, setIsOn] = useState(false);
-
-  const handleClick = () => {
-    setIsOn(!isOn);
-  };
-
+const SwitchBtn = (props) => {
   return (
-    <button className={`switch-button ${isOn ? 'on' : 'off'}`} onClick={handleClick}>
-      <span className="switch-button-text">{isOn ? 'ON' : 'OFF'}</span>
-    </button>
+    <div className='switch'>
+      <img className='switchIconLeft'
+        src={sunIconSrc}
+        alt='light mode icon'
+      />
+      <button className='switchButton'
+        data-active-theme={props.activeTheme}
+        onClick={props.onChangeTheme}
+      ></button>
+      <img className='switchIconRight'
+        src={moonIconSrc}
+        alt='dark mode icon'
+      />
+    </div>
   );
 };
 
-export default Switchbtn;
+export default SwitchBtn;

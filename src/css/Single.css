@@ -1,0 +1,65 @@
+.Single_header, .Single_contract, .Single_bio, .Single_require, .Single_role, .Single_footer{
+    background-color: var(--color-white);
+}
+
+.Single_body{
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Single_father{
+    width: min(80rem,100%);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+    border-radius: 0.6rem;
+    padding: 4.8rem;
+    margin-top: 3rem;
+    grid-gap: 4rem;
+    gap: 4rem;
+    transition: .2s linear;
+}
+
+.Single_header{
+    width: min(80rem,100%);
+    display: flex;
+    background-color: var(--color-white);
+    border-radius: 0.6rem;
+    overflow: hidden;
+    transition: .2s linear;
+}
+
+.Single_logo{
+    background-color: burlywood;
+    width: 14rem;
+}
+
+.Single_flex{
+    display: flex;
+    gap: 24.1rem;
+    align-items: center;
+    margin-inline: 4.1rem;
+    justify-content: space-between;
+    height: 14rem;
+}
+
+.Single_link{
+    background-color: #F4F6F8;
+    width: 14rem;
+}
+
+.Single_contract{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Single_contract_time{
+    display: flex;
+    align-items: baseline;
+    grid-gap: 1.2rem;
+    gap: 1.2rem;
+}
+
