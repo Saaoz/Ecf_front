@@ -1,14 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
+import AdminHeader from '../components/admin/A_Header';
+import '../css/Home.css'
 
-function Admin() {
+import SearchBar from '../components/commun/SearchBar';
+import AdminCard from '../components/admin/A_Card';
+import axios from 'axios';
 
+function Home() {
+    const [results, setResults] = useState([]);
+
+    const handleSearch = async (keyword, location, isFullTime) => {
+        try {
+            const response = await axios.get(`/api/search?position=${keyword}&location=${location}&isFullTime=${isFullTime}`);
+            setResults(response.data);
+        } catch (error) {
+            console.error(error);
+        }
+    };
 
     return (
-        <div>
-            <h2>Admin</h2>
-            <p>admin page.</p>
-        </div>
+        <>
+            <AdminHeader/>
+            <div className='searched'>
+                <SearchBar search={handleSearch} />
+            </div>
+
+            <section>
+                <AdminCard cards={results} />
+            </section>
+        </>
     );
 }
 
-export default Admin;
+export default Home;
