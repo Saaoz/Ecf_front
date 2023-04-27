@@ -1,12 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Single from './pages/Single';
 import Admin from './pages/Admin';
 import SingleJob from './components/single/SingleJob';
 import './css/App.css';
-import './css/reset.css';
-import './css/helpers.css';
+import './css/Reset.css';
+import './css/Helpers.css';
 
 function App() {
 	return (
@@ -16,7 +15,6 @@ function App() {
 				{/* if link doesn't work free back to home  */}
 				<Route path="*" element={<Home />} />
 
-				<Route path="/Single" element={<Single />} />
 				<Route path="/admin" element={<Admin />} />
 
 				{/* Ajouter la route pour SingleJob */}

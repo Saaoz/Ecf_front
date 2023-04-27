@@ -1,5 +1,5 @@
 import Switchbtn from "./Switch";
-import '../../css/header.css'
+import '../../css/Header.css'
 
 function Header() {
 

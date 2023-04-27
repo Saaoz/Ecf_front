@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from '../components/commun/Header';
-import '../css/home.css'
+import '../css/Home.css'
 
 import SearchBar from '../components/commun/SearchBar';
 import Card from '../components/home/Card';

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../css/switch.css';
+import '../../css/Switch.css';
 
 const Switchbtn = () => {
   const [isOn, setIsOn] = useState(false);
