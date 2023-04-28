@@ -67,7 +67,7 @@ const Admin_Card = () => {
 					<a className='web' href={card.website}>
 						Website
 					</a>
-					<button onClick={() => handleDelete(card._id)}>Supprimer</button>
+					<button className='btn-delete' onClick={() => handleDelete(card._id)}>Delete</button>
 				</div>
 			))}
 			{cards.length > limit ? (
