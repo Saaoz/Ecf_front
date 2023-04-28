@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+### INSTALLATION 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### `npm install`
 
-In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ J'ai réalisé différents appels front. J'ai utilisé axios pour gagner du temps et j'ai configuré l'URL de base avec la ligne suivante :
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### axios.defaults.baseURL = http://localhost:8000
 
-### `npm test`
+J'ai mis en place une barre de recherche, mais celle-ci ne fonctionne pas avec la requête suivante :
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### fetch(http://localhost:8000/api/jobs/search?position=${position}&location=${location}&contract=${contract})
 
-### `npm run build`
+Ensuite, j'ai réalisé un appel pour récupérer les données d'une seule offre en accédant à la page dédiée avec :
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### /api/jobs/${id}
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+J'ai également implémenté la fonctionnalité de suppression, qui permet de supprimer une offre via son ID dans la page d'administration :
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### /api/jobs/${cardId}
 
-### `npm run eject`
+Enfin, j'ai créé une fonction PostJob qui permet d'insérer des données dans la base de données via un formulaire dans la partie administration avec l'URL suivante :
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### '/api/jobs/create/'
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Au cas ou par exemple un lien complet d'appel du back : 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### http://localhost:8000/api/jobs/
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Sur ma version du front-end, il y a un header dans la page d'accueil qui contient le logo, qui est également un lien de retour configuré pour que lorsqu'il y a un « * » après le "/", il vous renvoie à la page d'accueil.
 
-## Learn More
+Dans ce même header, il y a un bouton pour activer le mode sombre, qui ne fonctionne pas actuellement.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Il y a également un bouton "admin" que je suis très fier d'avoir créé, qui donne accès à la partie administration, y compris à la création de nouvelles offres d'emploi via un formulaire et à la suppression d'offres existantes.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Ensuite, il y a une barre de recherche qui malheureusement ne fonctionne pas.
 
-### Code Splitting
+Les offres d'emploi sont ensuite affichées sous forme de cartes avec leur région et d'autres informations pertinentes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Il y a également un bouton "load more" en bas de la page qui permet de charger 12 offres supplémentaires à chaque clic.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Dans la page dédiée à chaque offre, vous avez accès à toutes les informations relatives à l'offre elle-même, ainsi qu'à un bouton "apply".
