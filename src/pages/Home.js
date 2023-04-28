@@ -33,7 +33,7 @@ function Home() {
             <section>
                 <Card cards={results.slice(0, limit)} />
                 {results.length <= limit ? (
-                    <p className='no-more'>Can't load more</p>
+                    <p className='no-more'></p>
                 ) : (
                     <div className='load-more'>
                         <button onClick={handleLoadMore}>Load more</button>

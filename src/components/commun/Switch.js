@@ -13,7 +13,9 @@ const SwitchBtn = (props) => {
       <button className='switchButton'
         data-active-theme={props.activeTheme}
         onClick={props.onChangeTheme}
-      ></button>
+      >
+        <span className='switchButtonIcon'></span>
+      </button>
       <img className='switchIconRight'
         src={moonIconSrc}
         alt='dark mode icon'

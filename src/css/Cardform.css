@@ -1,9 +1,14 @@
 .form-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
 }
+
+.submit-button {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+  }
 
 .form-field {
     display: flex;

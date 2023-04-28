@@ -1,4 +1,11 @@
-
+h2{
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  
+p{
+    font-size: 1.6rem;
+  }
 
 body{
     background-color: #F4F6F8;
@@ -48,15 +55,24 @@ body{
 }
 
 .load-more {
-    text-align: center;
-    margin-top: 30px;
+    grid-column: 2 / 3; /* positionne l'élément dans la deuxième colonne */
+    justify-self: center; /* centre l'élément horizontalement */
+
 }
 
 .load-more button {
-    background-color: #3e3e3e;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+    background-color: #5964E0;
+    color: var(--color-white);
+    font-size: 1.6rem;
+    font-weight: 700;
+    border-radius: 0.5rem;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+    padding-right: 1.6rem;
+    width: 14rem;
+}
+
+
+.load-more button:hover{
+    background-color: #939BF4;
 }

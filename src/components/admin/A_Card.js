@@ -75,7 +75,7 @@ const Admin_Card = () => {
 					<button onClick={handleLoadMore}>Load more</button>
 				</div>
 			) : (
-				<div className="load-more">Impossible de charger plus</div>
+				<div className="load-more">Can't load more</div>
 			)}
 			<ToastContainer position='top-right' />
 		</div>

@@ -8,7 +8,7 @@ function Formulaire() {
     return (
         <>
         <Header/>
-        <div>
+        <div className='formu'>
       <h1 className='formulaire_title'>Ajouter une nouvelle carte</h1>
       <AddCardForm/>
     </div>
