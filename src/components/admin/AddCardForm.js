@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import '../../css/cardform.css';
 import { postJob } from '../../api/api';
 
+
 const AddCardForm = () => {
   const [company, setCompany] = useState('');
   const [position, setPosition] = useState('');
-  const [contract, setContract] = useState('');
+  const [contract, setContract] = useState("Full time");
   const [location, setLocation] = useState('');
   const [website, setWebsite] = useState('');
   const [apply, setApply] = useState('');
@@ -13,8 +14,12 @@ const AddCardForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+    if (!contract) {
+      console.error("Veuillez sélectionner un contrat");
+      return;
+    }
     try {
+      const currentDate = new Date();
       const data = {
         company,
         position,
@@ -22,7 +27,8 @@ const AddCardForm = () => {
         location,
         website,
         apply,
-        description
+        description,
+        postedAt: currentDate.toISOString()
       };
       const response = await postJob(data);
       console.log(response);
@@ -54,7 +60,7 @@ const AddCardForm = () => {
           </select>
         </div>
 
-        
+
         <div class="form-field">
           <label className="label" htmlFor="location">Location:</label>
           <input className="input" type="text" id="location" value={location} onChange={(e) => setLocation(e.target.value)} />
@@ -75,8 +81,8 @@ const AddCardForm = () => {
           <textarea className="card-form__textarea" id="description" value={description} onChange={(e) => setDescription(e.target.value)} />
         </div>
         <div class="form-field div_btn">
-        <button class="submit-button" type="submit">Submit</button>
-      </div>
+          <button class="submit-button" type="submit">Submit</button>
+        </div>
       </form>
     </>
   );

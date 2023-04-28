@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+const moment = require('moment');
 axios.defaults.baseURL = `http://localhost:8000`
 
 export const searchJobOffers = async (position, location, contract) => {
@@ -28,7 +28,9 @@ export const fetchData = async () => {
 
   export const postJob = async (jobData) => {
     try {
-      const response = await axios.post('/api/jobs/', jobData);
+      const postedAt = moment().format('AAAA-MM-JJTHH:MM:SS.000Z');
+      const data = {...jobData, postedAt};
+      const response = await axios.post('/api/jobs/create/', data);
       return response.data;
     } catch (error) {
       console.error(error);
