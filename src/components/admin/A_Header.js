@@ -1,5 +1,5 @@
 import Switchbtn from "../commun/Switch";
-import '../../css/Header.css'
+import '../../css/header.css'
 import { Link } from 'react-router-dom';
 
 function Admin_Header() {

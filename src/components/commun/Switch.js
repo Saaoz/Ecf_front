@@ -1,7 +1,7 @@
 import sunIconSrc from '../../assets/img/sun.svg';
 import moonIconSrc from '../../assets/img/moon.svg';
 
-import '../../css/Switch.css';
+import '../../css/switch.css';
 
 const SwitchBtn = (props) => {
   return (

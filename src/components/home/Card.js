@@ -1,4 +1,4 @@
-import '../../css/Card.css';
+import '../../css/card.css';
 import { useState, useEffect } from 'react';
 import moment from 'moment';
 import logo from '../../assets/img/logo_sbg.png';

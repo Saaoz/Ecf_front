@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import AdminHeader from '../components/admin/A_Header';
-import '../css/Home.css'
+import '../css/home.css'
 
 import SearchBar from '../components/commun/SearchBar';
 import AdminCard from '../components/admin/A_Card';

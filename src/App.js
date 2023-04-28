@@ -4,8 +4,8 @@ import Home from './pages/Home';
 import Admin from './pages/Admin';
 import SingleJob from './components/single/SingleJob';
 import './css/App.css';
-import './css/Reset.css';
-import './css/Helpers.css';
+import './css/reset.css';
+import './css/helpers.css';
 import Formulaire from './pages/Formulaire';
 
 function App() {
