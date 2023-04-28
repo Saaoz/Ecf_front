@@ -8,6 +8,8 @@ import './css/Reset.css';
 import './css/Helpers.css';
 import Formulaire from './pages/Formulaire';
 
+const { v4: uuidv4 } = require('uuid');
+
 function App() {
 	return (
 		<BrowserRouter>
