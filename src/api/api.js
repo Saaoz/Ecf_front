@@ -36,3 +36,12 @@ export const fetchData = async () => {
       console.error(error);
     }
   };
+
+  export const deleteCardById = async (cardId) => {
+    try {
+      const response = await axios.delete(`/api/jobs/${cardId}`);
+      return response.data.message;
+    } catch (error) {
+      throw new Error(error.response.data.message);
+    }
+  };

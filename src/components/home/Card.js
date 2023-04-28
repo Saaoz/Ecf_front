@@ -2,15 +2,16 @@ import '../../css/card.css';
 import { useState, useEffect } from 'react';
 import moment from 'moment';
 import logo from '../../assets/img/logo_sbg.png';
-import { fetchData} from '../../api/api';
+import { fetchData } from '../../api/api';
 import { Link } from 'react-router-dom';
 
 const Card = () => {
-const [cards, setCards] = useState([]);
-const getCards = async () => {
-	const data = await fetchData();
-	setCards(data)
-};
+	const [cards, setCards] = useState([]);
+
+	const getCards = async () => {
+		const data = await fetchData();
+		setCards(data.sort((a, b) => moment(b.postedAt) - moment(a.postedAt)));
+	};
 
 	useEffect(() => {
 		getCards();
@@ -18,17 +19,17 @@ const getCards = async () => {
 
 	return (
 		<div className='features'>
-			{cards.map((card, index) => (
-				<div className='job_list'>
-					<Link to={`/single-job/${card._id}`} key={index} className='job-list_link'>
-					<img className='logo' src={logo} alt='Company Logo' />
-					<div className='time_part'>
-						<p>{moment(card.postedAt).fromNow()}</p>
-						<span className='Point_space'></span>
-						<p className='contract'>{card.contract}</p>
-					</div>
-					<h2>{card.position}</h2>
-					<p>{card.company}</p>
+			{cards.map((card) => (
+				<div className='job_list' key={card._id}>
+					<Link to={`/single-job/${card._id}`} className='job-list_link'>
+						<img className='logo' src={logo} alt='Company Logo' />
+						<div className='time_part'>
+							<p>{moment(card.postedAt).fromNow()}</p>
+							<span className='Point_space'></span>
+							<p className='contract'>{card.contract}</p>
+						</div>
+						<h2>{card.position}</h2>
+						<p>{card.company}</p>
 					</Link>
 					<a className='web' href={card.website}>
 						Website
