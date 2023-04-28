@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import '../../css/cardform.css'
+import '../../css/cardform.css';
+import { postJob } from '../../api/api';
 
 const AddCardForm = () => {
   const [company, setCompany] = useState('');
@@ -12,7 +13,22 @@ const AddCardForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Envoyer les données du formulaire à l'API en utilisant fetch ou axios
+    
+    try {
+      const data = {
+        company,
+        position,
+        contract,
+        location,
+        website,
+        apply,
+        description
+      };
+      const response = await postJob(data);
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -58,11 +74,10 @@ const AddCardForm = () => {
           <label className="label" htmlFor="description">Description:</label>
           <textarea className="card-form__textarea" id="description" value={description} onChange={(e) => setDescription(e.target.value)} />
         </div>
-
-      </form>
-      <div class="form-field div_btn">
+        <div class="form-field div_btn">
         <button class="submit-button" type="submit">Submit</button>
       </div>
+      </form>
     </>
   );
 };

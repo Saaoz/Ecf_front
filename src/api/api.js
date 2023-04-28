@@ -19,8 +19,18 @@ export const fetchData = async () => {
   };
 
   
+
+
   export const fetchSingleData = async (id) => {
     const response = await axios.get(`/api/jobs/${id}`);
     return response.data;
   };
 
+  export const postJob = async (jobData) => {
+    try {
+      const response = await axios.post('/api/jobs/', jobData);
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
+  };
