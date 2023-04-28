@@ -1,75 +1,16 @@
-.search_form{
-  width: 100%;
-  position: relative;
-}
-
-.search_section{
+.search_bar {
   display: flex;
-  background-color: #fff;
-  border-radius: 0.6rem;
-  width: 100%;
+  margin-inline: 17rem;
   justify-content: space-between;
-  align-items: center;
-  padding-right: 1.6rem;
-  transition: all 0.2s linear 0s;
-}
-
-.input_label{
-  position: relative;
-  display: flex;
-  align-items: center;
-  min-width: 20rem;
-  gap: 1rem;
-  padding: 2rem 3.2rem;
-}
-
-.time_label{
-  position: relative;
-  display: flex;
-  align-items: center;
-  font-size: 1.6rem;
-  color: #19202d;
-  font-weight: 600;
-  cursor: pointer;
-  text-transform: capitalize;
-  flex-shrink: 0 !important;
-  gap: 1.5rem;
-  padding: 2rem 3.2rem;
-}
-
-.btn_search{
-  width: 14rem;
-  color: var(--color-white);
-  background-color: var(--color-violet);
-  font-size: 1.6rem;
-  font-weight: 700;
-  text-transform: capitalize;
-  border-radius: 0.5rem;
-  padding: 1.6rem;
-  transition: all 0.2s linear 0s;
-}
-
-
-
-
-
-
-
-
-/* .search_bar {
-
-  display: flex;
   background-color: var(--color-white);
   border-radius: 0.6rem;
 }
 
 .company_input, .country_input {
-  flex-grow: 1;
   font-size: 1.6rem;
   color: #19202d;
   padding: 1rem;
-  border-radius: 0.5rem;
-  overflow: hidden;
+  border: none;
 }
 
 .lot_search, .lot_country{
@@ -98,10 +39,13 @@
 }
 
 .btn_search{
+  background-color: #5964E0;
+  color: var(--color-white);
     font-size: 1.6rem;
     font-weight: 700;
     border-radius: 0.5rem;
     margin-top: 1.6rem;
     margin-bottom: 1.6rem;
     margin-right: 1.6rem;
-} */
+    width: 14rem;
+}

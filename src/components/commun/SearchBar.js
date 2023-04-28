@@ -28,44 +28,22 @@ function SearchBar(props) {
 	};
 
 	return (
-		<form className='search_form'>
-			<section className='search_section'>
-				<label className='input_label company_label'>
+
+		<div className='search_bar'>
+			<div className='lot_search'>
 				<img src={icon_search} alt='icon_search' />
 				<input className='company_input' type='text' placeholder='Filter by title or company...' value={positionOrCompany} onChange={handlePositionOrCompanyChange} />
-				</label>
-				<label className='input_label location_label'>
-					<img src={icon_location} alt='icon_location' />
-					<input className='country_input' type='text' placeholder='Location' value={location} onChange={handleLocationChange} />
-				</label>
-				<label className=' time_label'>
-					<input type='checkbox' checked={isFullTime} onChange={handleFullTimeChange} />
-					Full Time Only
-				</label>
-				<button className='btn_search' onClick={handleSearch}>Search</button>
-			</section>
-		</form>
-
-
-
-
-
-
-		// <div className='search_bar'>
-		// 	<div className='lot_search'>
-		// 		<img src={icon_ search} alt='icon_search' />
-		// 		<input className='company_input' type='text' placeholder='Filter by title or company...' value={positionOrCompany} onChange={handlePositionOrCompanyChange} />
-		// 	</div>
-		// 	<div className='lot_country'>
-		// 		<img src={icon_ location} alt='icon_location' />
-		// 		<input className='country_input' type='text' placeholder='Location' value={location} onChange={handleLocationChange} />
-		// 	</div>
-		// 	<label className='check_full'>
-		// 		<input type='checkbox' checked={isFullTime} onChange={handleFullTimeChange} />
-		// 		Full Time Only
-		// 	</label>
-		// 	<button className='btn_search' onClick={handleSearch}>Search</button>
-		// </div>
+			</div>
+			<div className='lot_country'>
+				<img src={icon_location} alt='icon_location' />
+				<input className='country_input' type='text' placeholder='Location' value={location} onChange={handleLocationChange} />
+			</div>
+			<label className='check_full'>
+				<input type='checkbox' checked={isFullTime} onChange={handleFullTimeChange} />
+				Full Time Only
+			</label>
+			<button className='btn_search' onClick={handleSearch}>Search</button>
+		</div>
 	);
 }
 

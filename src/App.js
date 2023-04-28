@@ -6,6 +6,7 @@ import SingleJob from './components/single/SingleJob';
 import './css/App.css';
 import './css/Reset.css';
 import './css/Helpers.css';
+import Formulaire from './pages/Formulaire';
 
 function App() {
 	return (
@@ -16,6 +17,8 @@ function App() {
 				<Route path="*" element={<Home />} />
 
 				<Route path="/admin" element={<Admin />} />
+
+				<Route path="/admin/formulaire" element={<Formulaire />} />
 
 				{/* Ajouter la route pour SingleJob */}
 				<Route path="/single-job/:id" element={<SingleJob />} />
