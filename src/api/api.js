@@ -1,30 +1,26 @@
 import axios from 'axios';
 
-export const fetchData = async () => {
-    const response = await fetch('http://localhost:8000/jobs');
-    const data = await response.json();
-    return data;
-  };
+axios.defaults.baseURL = `http://localhost:8000`
 
-  export const fetchSingleData = async (id) => {
-    const response = await fetch(`http://localhost:8000/jobs/${id}`);
-    const data = await response.json();
-    return data;
-  };
-
-  export const searchJobOffers = async (keyword, location, contract, company) => {
-    try {
-    const response = await axios.get('/api/offers/search', {
-    params: {
-    keyword: keyword,
-    location: location,
-    contract: contract ? 'full-time' : undefined,
-    company: company
-    }
-    });
-    return response.data;
-    } catch (error) {
+export const searchJobOffers = async (position, location, contract) => {
+  try {
+    const response = await fetch(`http://localhost:8000/api/jobs/search?position=${position}&location=${location}&contract=${contract}`);
+    return response.json();
+  } catch (error) {
     console.error(error);
     return [];
-    }
-    };
+  }
+};
+
+
+export const fetchData = async () => {
+    const response = await axios.get('/api/jobs');
+    return response.data;
+  };
+
+  
+  export const fetchSingleData = async (id) => {
+    const response = await axios.get(`/api/jobs/${id}`);
+    return response.data;
+  };
+
