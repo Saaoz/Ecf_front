@@ -4,7 +4,7 @@ import moment from 'moment';
 import { fetchSingleData } from '../../api/api';
 import logo from '../../assets/img/logo_sbg.png';
 import Header from '../commun/Header';
-import '../../css/Single.css'
+import '../../css/single.css'
 
 function SingleJob() {
 	const { id } = useParams(); // Récupère l'id dans l'URL

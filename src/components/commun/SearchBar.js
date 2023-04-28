@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { searchJobOffers } from '../../api/api';
-import '../../css/Search.css';
+import '../../css/search.css';
 import icon_search from '../../assets/img/search.svg';
 import icon_location from '../../assets/img/location.svg';
 
