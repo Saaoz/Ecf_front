@@ -11,23 +11,30 @@ import 'react-toastify/dist/ReactToastify.css';
 const Admin_Card = () => {
 	const [cards, setCards] = useState([]);
 	const [showPopup, setShowPopup] = useState(false);
+	const [limit, setLimit] = useState(12);
+
+
 
 	const handleDelete = async (cardId, e) => {
 		try {
-		  await deleteCardById(cardId);
-		  toast.success('Carte supprimée avec succès');
-		  setTimeout(() => {
-			window.location.reload(); // recharger le composant après 10 secondes
-		  }, 4000);
+			await deleteCardById(cardId);
+			toast.success("Carte supprimée avec succès");
+			setTimeout(() => {
+				window.location.reload(); // recharger le composant après 10 secondes
+			}, 4000);
 		} catch (error) {
-		  console.error(error.message);
-		  toast.error('Une erreur s\'est produite lors de la suppression de la carte');
+			console.error(error.message);
+			toast.error("Une erreur s'est produite lors de la suppression de la carte");
 		}
-	  };
+	};
 
 	const getCards = async () => {
 		const data = await fetchData();
 		setCards(data)
+	};
+
+	const handleLoadMore = () => {
+		setLimit(limit + 12);
 	};
 
 	useEffect(() => {
@@ -45,7 +52,7 @@ const Admin_Card = () => {
 
 	return (
 		<div className='features'>
-			{cards.map((card, index) => (
+			{cards.slice(0, limit).map((card, index) => (
 				<div className='job_list' key={index}>
 					<Link to={`/single-job/${card._id}`} className='job-list_link'>
 						<img className='logo' src={logo} alt='Company Logo' />
@@ -63,6 +70,13 @@ const Admin_Card = () => {
 					<button onClick={() => handleDelete(card._id)}>Supprimer</button>
 				</div>
 			))}
+			{cards.length > limit ? (
+				<div className="load-more">
+					<button onClick={handleLoadMore}>Load more</button>
+				</div>
+			) : (
+				<div className="load-more">Impossible de charger plus</div>
+			)}
 			<ToastContainer position='top-right' />
 		</div>
 	);
