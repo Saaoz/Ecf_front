@@ -30,7 +30,7 @@ const Admin_Card = () => {
 
 	const getCards = async () => {
 		const data = await fetchData();
-		setCards(data)
+		setCards(data.sort((a, b) => moment(b.postedAt) - moment(a.postedAt)));
 	};
 
 	const handleLoadMore = () => {
